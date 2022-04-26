@@ -10,7 +10,7 @@ const morgan = require('morgan');
 const app = express();
 
 // Handle pre-routing middleware
-app.use(morgan('dev')); // TODO: Test 'develop' as well
+app.use(morgan('dev'));
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ limit: '30mb', extended: true }));
 
