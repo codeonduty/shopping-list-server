@@ -13,8 +13,31 @@
 
 // Libraries:
 
+const express = require('express');
+
 // Modules:
 
+// Controllers
+const { fetchLists, addList, deleteList } = require('./../controller/list');
+
 // Code:
+
+// Instantiate router
+const router = express.Router();
+
+// @desc Fetch all lists
+// @route GET /api/shopper/list
+// @access Public
+router.get('/shopper/list', fetchLists);
+
+// @desc Add a list
+// @route POST /api/shopper/list/add
+// @access Privileged
+router.post('/shopper/list/:id', addList);
+
+// @desc Delete a list using list ID
+// @route DELETE /api/shopper/list/delete/:id
+// @access Priveleged
+router.delete('/shopper/list/:id', deleteList);
 
 // list.js ends here
