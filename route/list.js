@@ -37,7 +37,9 @@ router.post('/shopper/list/:id', addList);
 
 // @desc Delete a list using list ID
 // @route DELETE /api/shopper/list/delete/:id
-// @access Priveleged
+// @access Privileged
 router.delete('/shopper/list/:id', deleteList);
+
+module.exports = router;
 
 // list.js ends here
