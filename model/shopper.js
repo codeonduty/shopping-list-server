@@ -12,10 +12,6 @@ const mongoose = require('mongoose');
 
 const ShopperSchema = mongoose.Schema(
   {
-    id: {
-      type: String,
-    },
-
     username: {
       type: String,
       trim: true,
