@@ -9,7 +9,6 @@
 //
 //   - Register a shopper
 //   - Login a shopper
-//   - Update a shopper
 //   - Delete a shopper
 
 // Libraries:

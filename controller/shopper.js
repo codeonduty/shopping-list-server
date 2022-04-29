@@ -9,7 +9,6 @@
 //
 //   - Register a shopper
 //   - Login a shopper
-//   - Update a shopper
 //   - Delete a shopper
 
 // Libraries:
@@ -17,5 +16,16 @@
 // Modules:
 
 // Code:
+
+// TODO: Register shopper
+const registerShopper = () => {};
+
+// TODO: Login shopper
+const loginShopper = () => {};
+
+// TODO: Delete shopper
+const deleteShopper = () => {};
+
+module.exports = { registerShopper, loginShopper, deleteShopper };
 
 // shopper.js ends here
