@@ -14,8 +14,38 @@
 
 // Libraries:
 
+const express = require('express');
+
 // Modules:
 
+const {
+  registerShopper,
+  loginShopper,
+  deleteShopper,
+} = require('./../controller/shopper');
+
 // Code:
+
+// Modules
+
+// Instantiate router
+const router = express.Router();
+
+// @desc Register shopper
+// @route POST /api/shopper/register
+// @access Public
+router.post('/shopper/register', registerShopper);
+
+// @desc Login shopper (fetch token)
+// @route POST /api/shopper/login
+// @access Public
+router.post('/shopper/login', loginShopper);
+
+// @desc Delete shopper
+// @route POST /api/shopper/delete
+// @access Privelleged
+router.post('/shopper/delete', deleteShopper);
+
+module.exports = router;
 
 // shopper.js ends here
