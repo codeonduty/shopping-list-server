@@ -14,8 +14,8 @@
 // Modules:
 
 const config = require('./config');
-const database = require('./mongoose');
-const server = require('./express');
+const database = require('./database');
+const server = require('./application');
 
 // Code:
 

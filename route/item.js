@@ -9,14 +9,41 @@
 //
 //   - Fetch an item
 //   - Fetch the catalogue of items
-//   - Add an item
 //   - Update an item
-//   - Delete an item
 
 // Libraries:
 
+const express = require('express');
+
 // Modules:
 
+// Controllers
+const {
+  fetchCatalogue,
+  fetchItem,
+  updateItem,
+} = require('./../controller/item');
+
 // Code:
+
+// Instantiate router
+const router = express.Router();
+
+// @desc Fetch all items
+// @route GET /api/catalogue
+// @access Public
+router.get('/item/catalogue', fetchCatalogue);
+
+// @desc Fetch item using item's ID
+// @route GET /api/item/:id
+// @access Public
+router.get('/item/:id', fetchItem);
+
+// @desc Update item using item's ID
+// @route PUT /api/item/:id
+// @access Public
+router.put('/item/:id', updateItem);
+
+module.exports = router;
 
 // item.js ends here

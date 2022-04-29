@@ -21,13 +21,13 @@
 
 // Code:
 
-// TODO: Register shopper
+// TODO: Register a shopper
 const registerShopper = () => {};
 
-// TODO: Login shopper
+// TODO: Login a shopper
 const loginShopper = () => {};
 
-// TODO: Delete shopper
+// TODO: Delete a shopper
 const deleteShopper = () => {};
 
 module.exports = { registerShopper, loginShopper, deleteShopper };

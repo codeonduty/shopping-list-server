@@ -9,14 +9,27 @@
 //
 //   - Fetch an item
 //   - Fetch the catalogue of items
-//   - Add an item
 //   - Update an item
-//   - Delete an item
 
 // Libraries:
 
+// None
+
 // Modules:
 
+// None
+
 // Code:
+
+// TODO: Fetch an item
+const fetchCatalogue = () => {};
+
+// TODO: Fetch the catalogue of items
+const fetchItem = () => {};
+
+// TODO: Update an item
+const updateItem = () => {};
+
+module.exports = { fetchCatalogue, fetchItem, updateItem };
 
 // item.js ends here

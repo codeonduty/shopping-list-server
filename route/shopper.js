@@ -9,6 +9,7 @@
 //
 //   - Register a shopper
 //   - Login a shopper
+//   - Update a shopper
 //   - Delete a shopper
 
 // Libraries:
@@ -17,6 +18,7 @@ const express = require('express');
 
 // Modules:
 
+// Controllers
 const {
   registerShopper,
   loginShopper,
@@ -42,7 +44,7 @@ router.post('/shopper/login', loginShopper);
 
 // @desc Delete shopper
 // @route POST /api/shopper/delete
-// @access Privelleged
+// @access Privileged
 router.post('/shopper/delete', deleteShopper);
 
 module.exports = router;
