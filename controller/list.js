@@ -8,7 +8,7 @@
 // `/controller/list.js' defines functions to:
 //
 //   - Fetch a shopper's lists
-//   - Add to a shopper's lists
+//   - Add a shopper's list
 //   - Delete a shopper's lists
 
 // Libraries:
@@ -16,5 +16,16 @@
 // Modules:
 
 // Code:
+
+// TODO: Fetch a shopper's lists
+const fetchLists = () => {};
+
+// TODO: Add a shopper's list
+const addList = () => {};
+
+// TODO: Delete a shopper's lists
+const deleteList = () => {};
+
+module.exports = { fetchLists, addList, deleteList };
 
 // list.js ends here
