@@ -5,8 +5,8 @@
 const config = {
   PORT: process.env.PORT || 5000,
   MONGODB_URI:
-    process.env.MONGODB_URI ||
-    'mongodb://localhost:27017/grocery-shopping-list',
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/shopping-list',
+  JWT_SECRET: process.env.JWT_SECRET || "mum's the word",
 };
 
 module.exports = config;

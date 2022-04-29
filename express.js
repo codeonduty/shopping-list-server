@@ -5,6 +5,10 @@
 // Libraries
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
+
+// Modules
+const shopperRoute = require('./route/shopper');
 
 // Instantiate express application
 const app = express();
@@ -13,11 +17,10 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ limit: '30mb', extended: true }));
+app.use(cors());
 
 // Handle routes
-app.get('/', (request, response) => {
-  response.send();
-});
+app.use('/api', shopperRoute);
 
 module.exports = app;
 
