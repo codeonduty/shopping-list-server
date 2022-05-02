@@ -53,14 +53,13 @@ const registerShopper = async (request, response) => {
       expiresIn: config.MAXIMUM_TOKEN_AGE,
     });
 
-    // Send shopper username + token + message in response (if successful)
+    // Send response
     response.status(201).json({
       result,
       token: token,
       message: 'Shopper registration successful!',
     });
   } catch (error) {
-    // Send JSON object with error message in response
     response
       .status(400)
       .json({ message: 'Error! Shopper registration failed!' });
@@ -70,7 +69,47 @@ const registerShopper = async (request, response) => {
 };
 
 // TODO: Login a shopper
-const loginShopper = () => {};
+const loginShopper = async (request, response) => {
+  // Extract shopper details from  request body
+  const { username, password } = request.body;
+
+  try {
+    // Find the matching shopper in database
+    const existingShopper = await Shopper.findOne({ username });
+
+    // Handle non-existent shopper
+    if (!existingShopper) {
+      return response
+        .status(401)
+        .json({ message: 'Invalid username or password!' });
+    }
+
+    // Validate password
+    const isPasswordCorrect = await bcrypt.compare(
+      password,
+      existingShopper.password
+    );
+    if (!isPasswordCorrect) {
+      return response
+        .status(400)
+        .json({ message: 'Invalid username or password!' }); // Invalid credentials
+    }
+
+    const token = jwt.sign({ username: username }, config.JWT_SECRET, {
+      expiresIn: config.MAXIMUM_TOKEN_AGE,
+    });
+
+    response.status(200).json({
+      result: existingShopper,
+      token: token,
+      message: 'Shopper login successful!',
+    });
+  } catch (error) {
+    response.status(400).json({ message: 'Error! Shopper login failed!' });
+
+    console.log(error);
+  }
+};
 
 // TODO: Delete a shopper
 const deleteShopper = () => {};

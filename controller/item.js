@@ -17,15 +17,32 @@
 
 // Modules:
 
-// None
+const Item = require('./../model/item');
 
 // Code:
 
 // TODO: Fetch an item
-const fetchCatalogue = () => {};
+const fetchCatalogue = async (request, response) => {
+  // Query the database
+  const items = await Item.find({});
+
+  // Send catalogue in response
+  response.json(items);
+};
 
 // TODO: Fetch the catalogue of items
-const fetchItem = () => {};
+const fetchItem = async (request, response) => {
+  // Query the database
+  const item = await Item.findById(request.params.id);
+
+  // If item is found, send in response
+  if (item) {
+    response.json(item);
+  } else {
+    // Return error if item is not found
+    response.status(404).json({ message: 'Item not found!' });
+  }
+};
 
 // TODO: Update an item
 const updateItem = () => {};

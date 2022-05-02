@@ -6,13 +6,15 @@
 
 // Libraries:
 
-// None
+const dotenv = require('dotenv');
 
 // Modules:
 
 // None
 
 // Code:
+
+dotenv.config();
 
 const config = {
   PORT: process.env.PORT || 5000,

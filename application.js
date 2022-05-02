@@ -32,6 +32,9 @@ app.use(cors());
 app.use('/api', shopperRoutes);
 app.use('/api', itemRoutes);
 app.use('/api', listRoutes);
+app.get('/', (request, response) => {
+  response.send('API is running...');
+});
 
 module.exports = app;
 
