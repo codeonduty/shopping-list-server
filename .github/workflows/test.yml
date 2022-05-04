@@ -1,0 +1,10 @@
+# test.yml
+
+name: Test Action
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm test
+# test.yml ends here
