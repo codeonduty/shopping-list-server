@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "start": "node server.js",
     "develop": "nodemon server.js",
     "seed": "node ./data/seeder",
