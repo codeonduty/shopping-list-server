@@ -1,7 +1,7 @@
 // list.js --- API functions for the list model
 
-const List = require("../model/list");
-const Shopper = require("../model/shopper");
+const List = require('../model/list');
+const Shopper = require('../model/shopper');
 
 // Commentary:
 
@@ -21,7 +21,7 @@ const Shopper = require("../model/shopper");
 // Code:
 
 // TODO: Fetch a shopper's lists
-const fetchLists = () => {
+const fetchLists = async () => {
   // Query the database
   const lists = await List.find({});
 
@@ -30,19 +30,18 @@ const fetchLists = () => {
 };
 
 // TODO: Add a shopper's list
-const addList = (request, response) => {
+const addList = async (request, response) => {
   const { username, items } = request.body;
 
   try {
-
     // Find shopper from database
     const shopper = Shopper.findOne({ username });
 
     // Save shopping list to database
     const result = await List.create({
       shopper: shopper,
-      items: items
-    })
+      items: items,
+    });
 
     response.status(201).json({
       message: 'Shopping list checkout successful!',
