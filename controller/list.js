@@ -1,5 +1,8 @@
 // list.js --- API functions for the list model
 
+const List = require("../model/list");
+const Shopper = require("../model/shopper");
+
 // Commentary:
 
 // `/controller/list.js' defines functions, on the list model, that are
@@ -18,10 +21,38 @@
 // Code:
 
 // TODO: Fetch a shopper's lists
-const fetchLists = () => {};
+const fetchLists = () => {
+  // Query the database
+  const lists = await List.find({});
+
+  // Send catalogue in response
+  response.json(lists);
+};
 
 // TODO: Add a shopper's list
-const addList = () => {};
+const addList = (request, response) => {
+  const { username, items } = request.body;
+
+  try {
+
+    // Find shopper from database
+    const shopper = Shopper.findOne({ username });
+
+    // Save shopping list to database
+    const result = await List.create({
+      shopper: shopper,
+      items: items
+    })
+
+    response.status(201).json({
+      message: 'Shopping list checkout successful!',
+    });
+  } catch (error) {
+    response
+      .status(400)
+      .json({ message: 'Error! Shopping list checkout failed!' });
+  }
+};
 
 // TODO: Delete a shopper's lists
 const deleteList = () => {};
