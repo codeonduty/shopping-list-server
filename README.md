@@ -11,7 +11,7 @@
 ---
 
 <div align='center'>
-  [![Test](https://github.com/codeonduty/shopping-list-server/actions/workflows/test.yml/badge.svg)](https://github.com/codeonduty/shopping-list-server/actions/workflows/test.yml)
+
 </div>
 
 ---
