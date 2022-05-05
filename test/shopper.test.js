@@ -8,7 +8,13 @@ describe('Shopper', () => {
     });
 
     describe('Given shopper exists...', () => {
-      it('...returns shopper + token + message from database', async () => {});
+      describe('Given shopper credentials are incorrect...', () => {
+        it('...returns shopper + token + message from database', async () => {});
+      });
+
+      describe('Given shopper credentials are correct...', () => {
+        it('...returns shopper + token + message from database', async () => {});
+      });
     });
   });
 

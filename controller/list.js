@@ -31,17 +31,21 @@ const fetchLists = async () => {
 
 // TODO: Add a shopper's list
 const addList = async (request, response) => {
-  const { username, items } = request.body;
+  const { username, items, quantity } = request.body;
 
   try {
     // Find shopper from database
     const shopper = Shopper.findOne({ username });
 
-    // Save shopping list to database
-    const result = await List.create({
-      shopper: shopper,
-      items: items,
+    // Create shopping list
+    const shoppingList = new List({
+      shopper,
+      items,
+      quantity,
     });
+
+    // Save shopping list to database
+    const result = await List.create(shoppingList);
 
     response.status(201).json({
       message: 'Shopping list checkout successful!',
