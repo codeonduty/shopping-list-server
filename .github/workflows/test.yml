@@ -14,10 +14,10 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test --coverage
-      - name: Coveralls Parallel
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.github_token }}
-          flag-name: run-${{ matrix.test_number }}
-          parallel: true
+      - name: Download Codecov
+        run: curl -Os https://uploader.codecov.io/latest/linux/codecov
+      - name: Install Codecov
+        run: chmod +x codecov
+      - name: Run Codecov
+        run: ./codecov
 # test.yml ends here
