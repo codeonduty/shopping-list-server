@@ -11,7 +11,6 @@
 ---
 
 <div align='center'>
-  <img src="https://github.com/codeonduty/shopping-list-server/actions/workflows/test.yml/badge.svg">
 </div>
 
 ---
